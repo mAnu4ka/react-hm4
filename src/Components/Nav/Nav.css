@@ -1,0 +1,14 @@
+.active {
+    display: flex !important;
+}
+
+
+.activepro {
+    background-color: #32395E;
+    color: #FFFFFF;
+    padding: 15px 13px;
+    border-radius: 10px;
+}
+
+.activepropro {
+}

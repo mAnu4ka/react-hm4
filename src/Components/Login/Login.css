@@ -1,0 +1,78 @@
+.login {
+    padding: 67px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-image: url(../../../public/Bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.loginBlock {
+    margin-top: 69px;
+    margin-bottom: 105px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 50px;
+    background: linear-gradient(180deg, #1E1156 0%, rgba(28, 35, 64, 0) 100%);
+    filter: drop-shadow(0px 25px 25px rgba(0, 3, 32, 0.5));
+    border-radius: 8px;
+    width: 480px;
+}
+
+.loginBlock p {
+    margin-top: 40px;
+    font-style: normal;
+    margin-bottom: 62px;
+}
+
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.butons {
+    margin-top: 64px;
+    margin-bottom: 103px;
+    display: flex;
+    gap: 32px;
+}
+
+.text p:nth-child(1) {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 72px;
+    color: #3887FE;
+    margin-bottom: 12px;
+}
+
+.text p {
+    margin-top: 24px;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.text div {
+    border: 2px solid #1288E8
+}
+
+.text_mm {
+    margin-right: 200px;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text .line {
+    width: 175px;
+}
