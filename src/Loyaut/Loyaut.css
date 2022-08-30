@@ -44,3 +44,25 @@ header {
     width: 100%;
     height: auto;
 }
+
+.viewStateBtn.active {
+    background-color: #32395e;
+
+}
+
+.viewStateBtn.active span {
+    color: white;
+}
+
+.viewStateBtn.active .line {
+    opacity: 1;
+}
+
+.viewStateBtn:hover {
+    background-color: #32395e;
+
+}
+
+.viewStateBtn:hover span {
+    color: white;
+}

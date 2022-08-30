@@ -75,7 +75,7 @@ function Loyaut({ children }) {
                     ></Box>
                 </header>
 
-                <Box padding='28px 32px 28px 32px '>
+                <Box padding='28px 32px 0px 32px '>
                     {children}
                 </Box>
             </Flex>

@@ -5,6 +5,7 @@ import { Doughnut } from 'react-chartjs-2';
 import Efitem from '../../Components/Efitem/Efitem'
 import Linechrat from '../../Components/Linechrat/Linechrat'
 import Items from '../../Components/Items/Items.jsx'
+// import { XYPlot, XAxis, YAxis, VerticalGridLines, LineSeries } from 'react-vis';
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Overview = () => {
@@ -53,6 +54,7 @@ const Overview = () => {
         ],
     };
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let names_bitc = ['Bitcoin', 'Ethereum', 'Dash']
     let bitcoin = [
         {
             name: 'Bitcoin',
@@ -122,8 +124,9 @@ const Overview = () => {
                     price_1: '1 BTC = $6 542, 35'
                 },
             ]
-        }
+        },
     ]
+
     bitcoin.map((item) => {
         procent.map((item2) => {
             if (item.name == item2.name) {
@@ -131,9 +134,27 @@ const Overview = () => {
             }
         })
     })
+    const news_arr = [
+        {
+            time: '19 hours ago',
+            des: "SEC Fails to Show Court Blockvest Tokens Are Securities",
+        },
+        {
+            time: '23 hours ago',
+            des: "Report: Bitcoin Mining Doesn’t Fuel Climate Change, It Benefits the Global Economy",
+        },
+        {
+            time: '11.22, 15:27 ',
+            des: "A Look at the Multi-Currency Encrypted Messaging App ‘Chat.Chat’",
+        },
+        {
+            time: '11.21, 11:43 ',
+            des: "Four Ways to Commemorate Bitcoin’s 10th Anniversary",
+        },
+    ]
     return (
         <>
-            <Flex justifyContent='space-between' alignItems='center'>
+            <Flex justifyContent='space-between' alignItems='center' marginBottom='28px'>
                 <Flex gap='40px'>
                     <Text color='#FFFFFF'>Overview</Text>
                     <Text color='#54669C'>{mouth}</Text>
@@ -141,9 +162,9 @@ const Overview = () => {
                 <Button padding='6px 23px' borderRadius='20px' color='#ffffff' background="linear-gradient(271.88deg, #3887FE 4.26%, #3BA0FF 51.37%, #5FB2FF 99.01%)"
                 > Add widget</Button>
             </Flex>
-            <Flex>
+            <Flex gap={19}>
                 <Flex gap={19}>
-                    <Box padding='16px 24px ' borderRadius={5} background='linear-gradient(180deg, rgba(27, 18, 78, 0.2) 0%, #0F0B38 93.37%)'>
+                    <Box padding='16px 24px ' borderRadius={5} background='linear-gradient(180deg, rgba(27, 18, 78, 0.2) 0%, #0F0B38 93.37%)' >
                         <Text color='#ffffff' fontWeight={700} fontSize={14} >Balance</Text>
                         <Box w={146} h={146} marginBottom={13}>
                             <Box position='absolute'>
@@ -160,7 +181,7 @@ const Overview = () => {
                             </Flex>
                         </Box>
                     </Box>
-                    <Box padding='16px 24px' borderRadius={5} background='linear-gradient(180deg, rgba(27, 18, 78, 0.2) 0%, #0F0B38 93.37%)'>
+                    <Box padding='16px 24px' borderRadius={5} background='linear-gradient(180deg, rgba(27, 18, 78, 0.2) 0%, #0F0B38 93.37%)' >
                         <Flex justifyContent='space-between' alignItems='center'>
                             <Text color='#ffffff' fontWeight={700} fontSize={14}>Spending</Text>
                             <Select variant='unstyled' placeholder={today_mouth} color='#FFFFFF' w='80px' fontSize={14} fontWeight={300}>
@@ -170,9 +191,39 @@ const Overview = () => {
                         <Linechrat />
                     </Box>
                 </Flex>
-                <Grid>
+                <Grid templateColumns='repeat(2, 1fr)' gap='16px'>
                     {bitcoin.map((item, index) => <Items key={index} item={item} />)}
                 </Grid>
+            </Flex>
+            <Flex marginTop='16px' gap='17px'>
+                <Flex background='linear-gradient(176.95deg, rgba(27, 18, 78, 0.2) -32.8%, #0F0B38 88.83%)' borderRadius={5}>
+                    <Box padding='16px' w={664.97}>
+                        <Flex alignItems='center' justifyContent='space-between' >
+                            <Flex alignItems='center'>
+                                <Text color='#FFFFFF' fontSize={14} fontWeight={700} marginRight='24px'>Market</Text>
+                                <Select variant='unstyled' color='#FFFFFF' w='80px' fontSize={14} fontWeight={300}>
+                                    {names_bitc.map((item, index) => <option key={index} value={item} >{item}</option>)}
+                                </Select>
+                            </Flex>
+                            <Select variant='unstyled' placeholder={today_mouth} color='#FFFFFF' w='80px' fontSize={14} fontWeight={300}>
+                                {months.map((item, index) => <option key={index} value={item} >{item}</option>)}
+                            </Select>
+                        </Flex>
+                        {/* <XYPlot width={300} height={300}>
+                        <VerticalGridLines values={[2, 2.3, 2.7]} />
+                        <XAxis />
+                        <YAxis />
+                        <LineSeries data={months} />
+                    </XYPlot> */}
+                    </Box>
+                </Flex>
+                <Box padding='16px' color='#ffffff' background='linear-gradient(185.19deg, rgba(27, 18, 78, 0.2) 3.73%, #0F0B38 95.83%)' borderRadius={5}>
+                    <Text color='#FFFFFF' fontSize={14} fontWeight={700} marginRight='24px'>recent news</Text>
+                    <Box background='#644696' h={0.5} w='100%' marginTop='6px' marginBottom='6px'></Box>
+                    <Flex gap='12px' flexDirection='column'>
+                        {news_arr.map((item, index) => <Flex key={index} gap="26px"><Text fontWeight={300} fontSize={12}>{item.time}</Text><Text fontWeight={600} fontSize={12}>{item.des}</Text></Flex>)}
+                    </Flex>
+                </Box>
             </Flex>
         </>
     )

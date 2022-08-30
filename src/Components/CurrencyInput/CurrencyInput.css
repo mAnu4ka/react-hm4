@@ -1,0 +1,23 @@
+.asd {
+    background: transparent;
+    color: #FFFFFF;
+    width: 101px;
+    height: 33px;
+}
+
+.price {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 42px;
+}
+
+.price select {
+    margin-right: 400px;
+}
+
+input {
+    display: flex;
+    width: 100%;
+}
